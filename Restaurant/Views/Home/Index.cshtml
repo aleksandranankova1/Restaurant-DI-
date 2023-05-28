@@ -1,8 +1,113 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<div class="welcome">
+   
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <!-- Indicators/dots -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+        </div>
+        <!-- The slideshow/carousel -->
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img id="img1" src="/images/6P099519-min.jpg" alt="First slide" width="200" height="650" class="d-block w-100" >
+                <div class="carousel-caption">
+                    <h1 class="heading"><b>Ресторант "Магичен Вкус"</b></h1>
+                    <p>Добре дошли!</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img id="img1" src="/images/passo-1.jpg" alt="Second slide" width="200" height="650" class="d-block w-100">
+                <div class="carousel-caption">
+                    <h2 class="heading">
+                        Животът има само смисъла, който сами му придадем. Той е шарено огледало. Усмихнем ли му се, ще ни се усмихне и той. Нашата мисия е да сътворим за вас безброй поводи за усмивки. Защото „Това е животът“ …
+                    </h2>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img id="img1" src="/images/R.jpg" alt="Third slide" width="200" height="650" class="d-block w-100">
+                <div class="carousel-caption">
+                    <h1 class="heading">Очакваме Ви!</h1>
+                </div>
+            </div>
+        </div>
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+        <!-- Left and right controls/icons -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div>
+  
+</div>
+<br />
+<br />
+<br />
+<br />
+<div class="promo-area">
+    <hr style="border:10px; height:2px; color:grey" />
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 col-sm-6">
+                <div class="single-promo">
+                    <i class="fa fa-refresh fa-2x promo1"></i>
+                    <p style="padding-top:20px;">РАЗНООБРАЗНО МЕНЮ</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="single-promo">
+                    <i class="fa fa-truck fa-2x promo1"></i>
+                    <p style="padding-top:20px;">ЛЕСНО РЕЗЕРВИРАНЕ</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="single-promo">
+                    <i class="fa fa-user fa-2x promo1"></i>
+                    <p style="padding-top:20px;">БЪРЗО ОБСЛУЖВАНЕ</p>
+                </div>
+            </div>
+            <div class="col-md-3 col-sm-6">
+                <div class="single-promo">
+                    <i class="fa fa-lock fa-2x promo1"></i>
+                    <p style="padding-top:20px;">ПРИЯТНА ОБСТАНОВКА</p>
+                </div>
+            </div>
+        </div>
+        <hr style="border:10px; color:grey; height:2px;" />
+    </div>
+</div>
+
+<div class="w3-container w3-content w3-padding-64" style="max-width:800px">
+    <h2 class="w3-wide w3-center">Контакти</h2>
+    <hr style="border:1px;" />
+    <div class="w3-row w3-padding-32" id="contact">
+        <div class="w3-col m6 w3-large w3-margin-bottom">
+            <i class="fa fa-map-marker" style="width:30px"></i> Местоположение: София, България<br>
+            <i class="fa fa-phone" style="width:30px"></i> Телефон: +359 880101001<br>
+            <i class="fa fa-envelope" style="width:30px"> </i> Email: aleksnankova7@gmail.com<br>
+        </div>
+        <div class="w3-col m6">
+            <form>
+                <div class="w3-row-padding" style="margin:0 -16px 8px -16px">
+                    <div class="w3-half">
+                        <input class="w3-input w3-border" type="text" placeholder="Име" required name="Name">
+                    </div>
+                    <div class="w3-half">
+                        <input class="w3-input w3-border" type="text" placeholder="Email" required name="Email">
+                    </div>
+                </div>
+                <input class="w3-input w3-border" type="text" placeholder="Съобщение" required name="Message">
+                <button class="w3-button w3-blue w3-section w3-right">Изпрати</button>
+            </form>
+
+        </div>
+    </div>
 </div>

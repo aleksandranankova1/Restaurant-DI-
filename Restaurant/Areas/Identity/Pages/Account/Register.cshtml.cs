@@ -47,7 +47,7 @@ namespace Restaurant.Areas.Identity.Pages.Account
             _emailSender = emailSender;
         }
 
-      
+
         [BindProperty]
         public InputModel Input { get; set; }
 
@@ -57,11 +57,12 @@ namespace Restaurant.Areas.Identity.Pages.Account
 
         public class InputModel
         {
-            
             [Required]
-            [EmailAddress]
-            [Display(Name = "Email")]
-            public string Email { get; set; }
+            [Display(Name = "Потребителско Име")]
+            public string UserName { get; set; }
+
+
+
 
             [Required]
             [Display(Name = "Първо Име")]
@@ -72,8 +73,9 @@ namespace Restaurant.Areas.Identity.Pages.Account
             public string LastName { get; set; }
 
             [Required]
-            [Display(Name = "Потребителско Име")]
-            public string UserName { get; set; }
+            [EmailAddress]
+            [Display(Name = "Email")]
+            public string Email { get; set; }
 
 
             [Required]
@@ -102,7 +104,7 @@ namespace Restaurant.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
 
-                var user = new Client
+                Client user = new Client
                 {
                     UserName = Input.UserName,
                     Email = Input.Email,
@@ -111,16 +113,16 @@ namespace Restaurant.Areas.Identity.Pages.Account
 
                 };
 
-              
 
-                await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
+
+                await _userStore.SetUserNameAsync(user, Input.UserName, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
                 var result = await _userManager.CreateAsync(user, Input.Password);
 
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
-                     await _userManager.AddToRoleAsync(user, "User"); 
+                    await _userManager.AddToRoleAsync(user, "User");
                     var userId = await _userManager.GetUserIdAsync(user);
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));

@@ -4,63 +4,249 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Description)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.ImageUrl)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Litre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Price)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.TypeBevarages)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-                <td>
-                    <img src="@Html.DisplayFor(modelItem => item.ImageUrl)" height="200">
-           @*     @Html.DisplayFor(modelItem => item.ImageUrl)*@
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Litre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Price)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.TypeBevarages.Name)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h1 class="quicksand-font header text-uppercase">Топли напитки</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Еспресо "Юлиъс майнал"</h4>
+            <p class="text-uppercase">45 мл   4.90 лв.</p>
+
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Еспресо Макиато</h4>
+            <p class="text-uppercase">50 мл   5.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Капучино</h4>
+            <p class="text-uppercase">150 мл   6.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Кафе Лате</h4>
+            <p class="text-uppercase">160 мл   6.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Топъл шоколад</h4>
+            <p class="text-uppercase">200 мл   4.90 лв.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h1 class="quicksand-font header text-uppercase">Безалкохолни напитки</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Продукти на Кока Кола</h4>
+            <p class="text-uppercase">200 мл   4.90 лв.</p>
+
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+        <h4 class="text-center quicksand-font text-uppercase">Ред Бул</h4>
+            <p class="text-uppercase">250 мл   7.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Перие</h4>
+            <p class="text-uppercase">330 мл   7.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Аква Пана</h4>
+            <p class="text-uppercase">750 мл   8.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Тоник Томас Хенри</h4>
+            <p class="text-uppercase">200 мл   6.90 лв.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h1 class="quicksand-font header text-uppercase">Винен лист</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Захир (совиньон блан)</h4>
+            <p class="text-uppercase">375 мл   12.90 лв.</p>
+
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Наливно вино - Вила Ямбол (шардоне)</h4>
+            <p class="text-uppercase">1 л   26.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Наливно вино - Захир (совиньон блан)</h4>
+            <p class="text-uppercase">1 л   27.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Кастра рубра (мерло и малбек)</h4>
+            <p class="text-uppercase">375 мл   22.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Бътърфлайс рок (мерло, каберне совиньон, каберне фран и сира)</h4>
+            <p class="text-uppercase">750 мл   59.90 лв.</p>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h1 class="quicksand-font header text-uppercase">Уиски</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Джеймисън</h4>
+            <p class="text-uppercase">50 мл   6.90 лв.</p>
+
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Чивас Регал 12г.</h4>
+            <p class="text-uppercase">50 мл   13.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Джеймисън Блек Барел</h4>
+            <p class="text-uppercase">50 мл   10.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Бушмилс</h4>
+            <p class="text-uppercase">50 мл   6.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Червеноо Джони</h4>
+            <p class="text-uppercase">50 мл   6.90 лв.</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h1 class="quicksand-font header text-uppercase">Водка</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Абсолют</h4>
+            <p class="text-uppercase">50 мл   6.90 лв.</p>
+
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Остоя</h4>
+            <p class="text-uppercase">50 мл   13.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Финландия</h4>
+            <p class="text-uppercase">50 мл   8.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Белуга</h4>
+            <p class="text-uppercase">50 мл  17.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Грей Гус</h4>
+            <p class="text-uppercase">50 мл   14.90 лв.</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h1 class="quicksand-font header text-uppercase">Узо</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Пломари</h4>
+            <p class="text-uppercase">200 мл   18.90 лв.</p>
+
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Матарели</h4>
+            <p class="text-uppercase">200 мл   21.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Hios</h4>
+            <p class="text-uppercase">200 мл   21.90 лв.</p>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Mini</h4>
+            <p class="text-uppercase">50 мл   5.90 лв.</p>
+        </div>
+    </div>
+  
+</div>
+<div class="container">
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h1 class="quicksand-font header text-uppercase">Джин</h1>
+            <hr>
+        </div>
+    </div>
+    <div class="row d-flex justify-content-center">
+        <div class="col-10 pb-5 text-center">
+            <h4 class="text-center quicksand-font text-uppercase">Бифитър</h4>
+            <p class="text-uppercase">50 мл   6.90 лв.</p>
+</div>
+</div>
